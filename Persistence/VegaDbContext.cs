@@ -11,5 +11,6 @@ namespace ng4_asp.net_core_2.Persistence
         }
 
         public DbSet<Make> Makes { get; set; }
+        public DbSet<Feature> Features { get; set; }
     }
 }
