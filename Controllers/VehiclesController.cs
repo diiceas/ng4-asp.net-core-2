@@ -44,11 +44,22 @@ namespace ng4_asp.net_core_2.Controllers
             var vehicle = await context.Vehicles.Include(v => v.Features).SingleOrDefaultAsync(v => v.Id == id);
             mapper.Map<VehicleResource, Vehicle>(vehicleResource, vehicle);
             vehicle.LastUpdate = DateTime.Now;
-                        
+
             await context.SaveChangesAsync();
 
             var result = mapper.Map<Vehicle, VehicleResource>(vehicle);
             return Ok(result);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteVehicle(int id)
+        {
+            var vehicle = await context.Vehicles.FindAsync(id);
+
+            context.Remove(vehicle);
+            await context.SaveChangesAsync();
+
+            return Ok(id);
         }
     }
 }
