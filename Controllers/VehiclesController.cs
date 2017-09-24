@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ng4_asp.net_core_2.Controllers.Resources;
 using ng4_asp.net_core_2.Models;
-using ng4_asp.net_core_2.Persistence;
+using ng4_asp.net_core_2.Core;
 
 namespace ng4_asp.net_core_2.Controllers
 {
