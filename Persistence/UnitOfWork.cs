@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
+using vega.Core;
 
-namespace ng4_asp.net_core_2.Persistence
+namespace vega.Persistence
 {
     public class UnitOfWork : IUnitOfWork
     {

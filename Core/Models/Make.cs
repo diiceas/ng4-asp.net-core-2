@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace ng4_asp.net_core_2.Models
+namespace vega.Core.Models
 {
     public class Make
     {

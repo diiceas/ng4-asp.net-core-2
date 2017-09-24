@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ng4_asp.net_core_2.Models
+namespace vega.Core.Models
 {
     [Table("Features")]
     public class Feature

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
-using ng4_asp.net_core_2.Persistence;
+using vega.Persistence;
 using System;
 
 namespace vega.Migrations
@@ -21,7 +21,7 @@ namespace vega.Migrations
                 .HasAnnotation("ProductVersion", "2.0.0-rtm-26452")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ng4_asp.net_core_2.Models.Feature", b =>
+            modelBuilder.Entity("vega.Models.Feature", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -35,7 +35,7 @@ namespace vega.Migrations
                     b.ToTable("Features");
                 });
 
-            modelBuilder.Entity("ng4_asp.net_core_2.Models.Make", b =>
+            modelBuilder.Entity("vega.Models.Make", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -49,7 +49,7 @@ namespace vega.Migrations
                     b.ToTable("Makes");
                 });
 
-            modelBuilder.Entity("ng4_asp.net_core_2.Models.Model", b =>
+            modelBuilder.Entity("vega.Models.Model", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -67,7 +67,7 @@ namespace vega.Migrations
                     b.ToTable("Models");
                 });
 
-            modelBuilder.Entity("ng4_asp.net_core_2.Models.Vehicle", b =>
+            modelBuilder.Entity("vega.Models.Vehicle", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -96,7 +96,7 @@ namespace vega.Migrations
                     b.ToTable("Vehicles");
                 });
 
-            modelBuilder.Entity("ng4_asp.net_core_2.Models.VehicleFeature", b =>
+            modelBuilder.Entity("vega.Models.VehicleFeature", b =>
                 {
                     b.Property<int>("VehicleId");
 
@@ -109,30 +109,30 @@ namespace vega.Migrations
                     b.ToTable("VehicleFeatures");
                 });
 
-            modelBuilder.Entity("ng4_asp.net_core_2.Models.Model", b =>
+            modelBuilder.Entity("vega.Models.Model", b =>
                 {
-                    b.HasOne("ng4_asp.net_core_2.Models.Make", "Make")
+                    b.HasOne("vega.Models.Make", "Make")
                         .WithMany("Models")
                         .HasForeignKey("MakeId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("ng4_asp.net_core_2.Models.Vehicle", b =>
+            modelBuilder.Entity("vega.Models.Vehicle", b =>
                 {
-                    b.HasOne("ng4_asp.net_core_2.Models.Model", "Model")
+                    b.HasOne("vega.Models.Model", "Model")
                         .WithMany()
                         .HasForeignKey("ModelId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("ng4_asp.net_core_2.Models.VehicleFeature", b =>
+            modelBuilder.Entity("vega.Models.VehicleFeature", b =>
                 {
-                    b.HasOne("ng4_asp.net_core_2.Models.Feature", "Feature")
+                    b.HasOne("vega.Models.Feature", "Feature")
                         .WithMany()
                         .HasForeignKey("FeatureId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ng4_asp.net_core_2.Models.Vehicle", "Vehicle")
+                    b.HasOne("vega.Models.Vehicle", "Vehicle")
                         .WithMany("Features")
                         .HasForeignKey("VehicleId")
                         .OnDelete(DeleteBehavior.Cascade);

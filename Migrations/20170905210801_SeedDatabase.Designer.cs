@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
-using ng4_asp.net_core_2.Persistence;
+using vega.Persistence;
 using System;
 
 namespace vega.Migrations
@@ -21,7 +21,7 @@ namespace vega.Migrations
                 .HasAnnotation("ProductVersion", "2.0.0-rtm-26452")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ng4_asp.net_core_2.Models.Make", b =>
+            modelBuilder.Entity("vega.Models.Make", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -35,7 +35,7 @@ namespace vega.Migrations
                     b.ToTable("Makes");
                 });
 
-            modelBuilder.Entity("ng4_asp.net_core_2.Models.Model", b =>
+            modelBuilder.Entity("vega.Models.Model", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -53,9 +53,9 @@ namespace vega.Migrations
                     b.ToTable("Models");
                 });
 
-            modelBuilder.Entity("ng4_asp.net_core_2.Models.Model", b =>
+            modelBuilder.Entity("vega.Models.Model", b =>
                 {
-                    b.HasOne("ng4_asp.net_core_2.Models.Make", "Make")
+                    b.HasOne("vega.Models.Make", "Make")
                         .WithMany("Models")
                         .HasForeignKey("MakeId")
                         .OnDelete(DeleteBehavior.Cascade);

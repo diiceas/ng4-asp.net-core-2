@@ -3,11 +3,11 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ng4_asp.net_core_2.Controllers.Resources;
-using ng4_asp.net_core_2.Models;
-using ng4_asp.net_core_2.Core;
+using vega.Controllers.Resources;
+using vega.Core.Models;
+using vega.Core;
 
-namespace ng4_asp.net_core_2.Controllers
+namespace vega.Controllers
 {
     [Route("/api/vehicles")]
     public class VehiclesController : Controller

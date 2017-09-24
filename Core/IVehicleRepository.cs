@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
-using ng4_asp.net_core_2.Models;
+using vega.Core.Models;
 
-namespace ng4_asp.net_core_2.Core
+namespace vega.Core
 {
     public interface IVehicleRepository
     {

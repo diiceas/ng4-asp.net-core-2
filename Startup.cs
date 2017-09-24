@@ -9,7 +9,8 @@ using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using ng4_asp.net_core_2.Persistence;
+using vega.Core;
+using vega.Persistence;
 
 namespace vega
 {
