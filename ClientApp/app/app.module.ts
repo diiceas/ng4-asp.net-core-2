@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { NgModule } from '@angular/core';
+import { NgModule, NgZone, ErrorHandler } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ToastyModule } from 'ng2-toasty'
 
@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { VehicleFormComponent } from './components/vehicle-form/vehicle-form.component';
+import { AppErrorHandler } from './app.error.handler';
 
 @NgModule({
     declarations: [
@@ -37,9 +38,10 @@ import { VehicleFormComponent } from './components/vehicle-form/vehicle-form.com
             { path: '**', redirectTo: 'home' }
         ])
     ],
-    providers: [
-        VehicleService
-    ]
+    providers: [        
+        VehicleService, 
+        { provide: ErrorHandler, useClass: AppErrorHandler }
+    ]    
 })
 export class AppModuleShared {
 }
