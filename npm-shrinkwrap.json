@@ -4753,6 +4753,11 @@
       "from": "range-parser@>=1.0.3 <2.0.0",
       "resolved": "https://registry.npmjs.org/range-parser/-/range-parser-1.2.0.tgz"
     },
+    "raven-js": {
+      "version": "3.18.1",
+      "from": "https://registry.npmjs.org/raven-js/-/raven-js-3.18.1.tgz",
+      "resolved": "https://registry.npmjs.org/raven-js/-/raven-js-3.18.1.tgz"
+    },
     "raw-body": {
       "version": "2.2.0",
       "from": "raw-body@>=2.2.0 <2.3.0",
