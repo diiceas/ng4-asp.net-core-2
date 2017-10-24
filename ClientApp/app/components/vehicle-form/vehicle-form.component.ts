@@ -22,17 +22,22 @@ export class VehicleFormComponent implements OnInit {
     private router: Router,
     private vehicleService: VehicleService,
     private toastyService: ToastyService
-  ) { 
+  ) {
     route.params.subscribe(p => {
       this.vehicle.id = +p['id'];
     });
   }
 
   ngOnInit() {
-    this.vehicleService.getVehicle(this.vehicle.id)
-      .subscribe(v => {
-        this.vehicle = v;
-      })
+    if (this.vehicle.id) {
+      this.vehicleService.getVehicle(this.vehicle.id)
+        .subscribe(v => {
+          this.vehicle = v;
+        }, err => {
+          if (err.status == 404)
+            this.router.navigate(['/home']);
+        });
+    }
 
     this.vehicleService.getMakes().subscribe(makes => this.makes = makes);
 
