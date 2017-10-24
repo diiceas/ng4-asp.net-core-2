@@ -69,7 +69,7 @@ export class VehicleFormComponent implements OnInit {
     this.vehicle.modelId = v.model.id;
     this.vehicle.isRegistered = v.isRegistered;
     this.vehicle.contact = v.contact;
-    this.vehicle.features = _.pluck(v.features, 'id'); 
+    this.vehicle.features = _.pluck(v.features, 'id');
   }
 
   onMakeChange() {
@@ -92,7 +92,21 @@ export class VehicleFormComponent implements OnInit {
   }
 
   submit() {
-    this.vehicleService.create(this.vehicle)
-      .subscribe(x => console.log(x));
+    if (this.vehicle.id) {
+      this.vehicleService.update(this.vehicle).
+        subscribe(x => {
+          this.toastyService.success({
+            title: 'Success',
+            msg: 'The vehicle was successfully updated',
+            theme: 'bootstrap',
+            showClose: true,
+            timeout: 5000
+          });
+        });
+    }
+    else {
+      this.vehicleService.create(this.vehicle)
+        .subscribe(x => console.log(x));
+    }
   }
 }
