@@ -40,7 +40,7 @@ namespace vega.Persistence
             context.Vehicles.Remove(vehicle);
         }
 
-        public async Task<IEnumerable<Vehicle>> GetVehicles(Filter filter)
+        public async Task<IEnumerable<Vehicle>> GetVehicles(VehicleQuery filter)
         {
             var query = context.Vehicles
             .Include(v => v.Model)
