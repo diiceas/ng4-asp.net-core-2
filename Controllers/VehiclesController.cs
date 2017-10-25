@@ -7,6 +7,8 @@ using vega.Controllers.Resources;
 using vega.Core.Models;
 using vega.Core;
 using System.Collections.Generic;
+using ng4_asp.net_core_2.Controllers.Resources;
+using ng4_asp.net_core_2.Core.Models;
 
 namespace vega.Controllers
 {
@@ -89,8 +91,10 @@ namespace vega.Controllers
             return Ok(vehicleResource);
         }
 
-        public async Task<IEnumerable<VehicleResource>> GetVehicles(){
-            var vehicles = await repository.GetVehicles();
+        public async Task<IEnumerable<VehicleResource>> GetVehicles(FilterResource filterResource)
+        {
+            var filter = mapper.Map<FilterResource, Filter>(filterResource);
+            var vehicles = await repository.GetVehicles(filter);
             return mapper.Map<IEnumerable<Vehicle>, IEnumerable<VehicleResource>>(vehicles);
         }
     }
