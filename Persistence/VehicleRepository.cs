@@ -1,8 +1,11 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ng4_asp.net_core_2.Core.Models;
+using ng4_asp.net_core_2.Extensions;
 using vega.Core;
 using vega.Core.Models;
 
@@ -40,8 +43,9 @@ namespace vega.Persistence
             context.Vehicles.Remove(vehicle);
         }
 
-        public async Task<IEnumerable<Vehicle>> GetVehicles(VehicleQuery filter)
+        public async Task<QueryResult<Vehicle>> GetVehicles(VehicleQuery queryObj)
         {
+            var result = new QueryResult<Vehicle>();
             var query = context.Vehicles
             .Include(v => v.Model)
               .ThenInclude(m => m.Make)
@@ -49,14 +53,30 @@ namespace vega.Persistence
               .ThenInclude(vf => vf.Feature)
             .AsQueryable();
 
-            if (filter.MakeId.HasValue)
-                query = query.Where(v => v.Model.MakeId == filter.MakeId.Value);
+            if (queryObj.MakeId.HasValue)
+                query = query.Where(v => v.Model.MakeId == queryObj.MakeId.Value);
 
-            if (filter.ModelId.HasValue)
-                query = query.Where(v => v.ModelId == filter.ModelId.Value);
+            if (queryObj.ModelId.HasValue)
+                query = query.Where(v => v.ModelId == queryObj.ModelId.Value);
 
 
-            return await query.ToListAsync();
+            // Expression<Func<Vehicle, object>> exp;
+            var columnsMap = new Dictionary<string, Expression<Func<Vehicle, object>>>()
+            {
+                ["make"] = v => v.Model.Make.Name,
+                ["model"] = v => v.Model.Name,
+                ["contactName"] = v => v.ContactName,
+            };
+
+            query = query.ApplyOrdering(queryObj, columnsMap);
+
+            result.TotalItems = await query.CountAsync();
+            
+            query = query.ApplyPaging(queryObj);
+
+            result.Items = await query.ToListAsync();
+
+            return result;
         }
     }
 }
