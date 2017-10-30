@@ -1,6 +1,6 @@
-using ng4_asp.net_core_2.Extensions;
+using vega.Extensions;
 
-namespace ng4_asp.net_core_2.Core.Models
+namespace vega.Core.Models
 {
     public class VehicleQuery: IQueryObject
     {

@@ -1,4 +1,4 @@
-namespace ng4_asp.net_core_2.Extensions
+namespace vega.Extensions
 {
     public interface IQueryObject
     {

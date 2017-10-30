@@ -7,8 +7,6 @@ using vega.Controllers.Resources;
 using vega.Core.Models;
 using vega.Core;
 using System.Collections.Generic;
-using ng4_asp.net_core_2.Controllers.Resources;
-using ng4_asp.net_core_2.Core.Models;
 
 namespace vega.Controllers
 {

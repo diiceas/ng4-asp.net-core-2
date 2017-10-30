@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ng4_asp.net_core_2.Core.Models;
 using vega.Core.Models;
 
 namespace vega.Core

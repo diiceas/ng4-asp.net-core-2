@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace ng4_asp.net_core_2.Core.Models
+namespace vega.Core.Models
 {
     public class QueryResult<T>
     {

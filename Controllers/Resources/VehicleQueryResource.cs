@@ -1,4 +1,4 @@
-namespace ng4_asp.net_core_2.Controllers.Resources
+namespace vega.Controllers.Resources
 {
     public class VehicleQueryResource
     {

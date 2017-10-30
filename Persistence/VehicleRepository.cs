@@ -4,10 +4,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using ng4_asp.net_core_2.Core.Models;
-using ng4_asp.net_core_2.Extensions;
-using vega.Core;
 using vega.Core.Models;
+using vega.Extensions;
+using vega.Core;
 
 namespace vega.Persistence
 {

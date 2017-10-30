@@ -36,7 +36,7 @@ export class VehicleFormComponent implements OnInit {
     private toastyService: ToastyService
   ) {
     route.params.subscribe(p => {
-      this.vehicle.id = +p['id'];
+      this.vehicle.id = +p['id'] || 0;
     });
   }
 
@@ -77,7 +77,7 @@ export class VehicleFormComponent implements OnInit {
     delete this.vehicle.modelId;
   }
 
-  populateModels() {
+  private populateModels() {
     var selectedMake = this.makes.find(make => make.id == this.vehicle.makeId);
     this.models = selectedMake ? selectedMake.models : [];
   }

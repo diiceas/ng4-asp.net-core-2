@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using ng4_asp.net_core_2.Core.Models;
+using vega.Core.Models;
 
-namespace ng4_asp.net_core_2.Extensions
+namespace vega.Extensions
 {
     public static class IQueryableExtensions
     {
