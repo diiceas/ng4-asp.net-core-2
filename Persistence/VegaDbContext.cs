@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using ng4_asp.net_core_2.Core.Models;
 using vega.Core.Models;
 
 namespace vega.Persistence
@@ -9,6 +10,7 @@ namespace vega.Persistence
         public DbSet<Make> Makes { get; set; }
         public DbSet<Model> Models { get; set; }
         public DbSet<Feature> Features { get; set; }
+        public DbSet<Photo> Photos { get; set; }
         public VegaDbContext(DbContextOptions<VegaDbContext> options) : base(options)
         {
 
