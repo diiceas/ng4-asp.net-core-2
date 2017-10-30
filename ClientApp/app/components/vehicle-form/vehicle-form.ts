@@ -9,8 +9,8 @@ import 'rxjs/add/Observable/forkJoin';
 
 @Component({
   selector: 'app-vehicle-form',
-  templateUrl: './vehicle-form.component.html',
-  styleUrls: ['./vehicle-form.component.css']
+  templateUrl: './vehicle-form.html',
+  styleUrls: ['./vehicle-form.css']
 })
 export class VehicleFormComponent implements OnInit {
   makes: any[];

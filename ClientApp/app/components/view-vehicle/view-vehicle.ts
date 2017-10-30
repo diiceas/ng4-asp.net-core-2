@@ -5,8 +5,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-view-vehicle',
-  templateUrl: './view-vehicle.component.html',
-  styleUrls: ['./view-vehicle.component.css']
+  templateUrl: './view-vehicle.html',
+  styleUrls: ['./view-vehicle.css']
 })
 export class ViewVehicleComponent implements OnInit {
   vehicle: any;

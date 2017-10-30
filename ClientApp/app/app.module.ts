@@ -9,16 +9,16 @@ import { ToastyModule } from 'ng2-toasty'
 
 import { VehicleService } from './services/vehicle.service';
 
-import { AppComponent } from './components/app/app.component';
-import { NavMenuComponent } from './components/navmenu/navmenu.component';
-import { HomeComponent } from './components/home/home.component';
-import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
-import { CounterComponent } from './components/counter/counter.component';
-import { VehicleFormComponent } from './components/vehicle-form/vehicle-form.component';
+import { AppComponent } from './components/app/app';
+import { NavMenuComponent } from './components/navmenu/navmenu';
+import { HomeComponent } from './components/home/home';
+import { FetchDataComponent } from './components/fetchdata/fetchdata';
+import { CounterComponent } from './components/counter/counter';
+import { VehicleFormComponent } from './components/vehicle-form/vehicle-form';
 import { AppErrorHandler } from './app.error.handler';
-import { VehicleListComponent } from './components/vehicle-list/vehicle-list.component';
-import { PaginationComponent } from './components/shared/pagination.component';
-import { ViewVehicleComponent } from './components/view-vehicle/view-vehicle.component';
+import { VehicleListComponent } from './components/vehicle-list/vehicle-list';
+import { PaginationComponent } from './components/shared/pagination';
+import { ViewVehicleComponent } from './components/view-vehicle/view-vehicle';
 
 Raven.config("https://b62620db245c47daa9a7d4f3e4b56b91@sentry.io/225623").install();
 

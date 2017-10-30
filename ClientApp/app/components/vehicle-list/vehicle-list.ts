@@ -4,8 +4,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-vehicle-list',
-  templateUrl: './vehicle-list.component.html',
-  styleUrls: ['./vehicle-list.component.css']
+  templateUrl: './vehicle-list.html',
+  styleUrls: ['./vehicle-list.css']
 })
 export class VehicleListComponent implements OnInit {
   private readonly PAGE_SIZE = 3;
