@@ -4,9 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-view-vehicle',
-  templateUrl: './view-vehicle.html',
-  styleUrls: ['./view-vehicle.css']
+  templateUrl: 'view-vehicle.html'
 })
 export class ViewVehicleComponent implements OnInit {
   vehicle: any;
@@ -16,8 +14,7 @@ export class ViewVehicleComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private toasty: ToastyService,
-    private vehicleService: VehicleService
-  ) {
+    private vehicleService: VehicleService) { 
 
     route.params.subscribe(p => {
       this.vehicleId = +p['id'];
@@ -26,7 +23,6 @@ export class ViewVehicleComponent implements OnInit {
         return;
       }
     });
-
   }
 
   ngOnInit() {
@@ -45,7 +41,7 @@ export class ViewVehicleComponent implements OnInit {
     if (confirm("Are you sure?")) {
       this.vehicleService.delete(this.vehicle.id)
         .subscribe(x => {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/vehicles']);
         });
     }
   }

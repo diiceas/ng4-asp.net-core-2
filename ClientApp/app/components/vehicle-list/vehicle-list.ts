@@ -3,15 +3,12 @@ import { Vehicle, KeyValuePair } from './../../models/vehicle';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-vehicle-list',
-  templateUrl: './vehicle-list.html',
-  styleUrls: ['./vehicle-list.css']
+  templateUrl: 'vehicle-list.html'
 })
 export class VehicleListComponent implements OnInit {
   private readonly PAGE_SIZE = 3;
 
   queryResult: any = {};
-  allVehicles: Vehicle[];
   makes: KeyValuePair[];
   query: any = {
     pageSize: this.PAGE_SIZE
@@ -54,7 +51,6 @@ export class VehicleListComponent implements OnInit {
       this.query.sortBy = columnName;
       this.query.isSortAscending = true;
     }
-
     this.populateVehicles();
   }
 
