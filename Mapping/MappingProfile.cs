@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
+using ng4_asp.net_core_2.Controllers.Resources;
+using ng4_asp.net_core_2.Core.Models;
 using vega.Controllers.Resources;
 using vega.Core.Models;
 
@@ -11,6 +13,7 @@ namespace vega.Mapping
         public MappingProfile()
         {
             //Domain to API Resource
+            CreateMap<Photo, PhotoResource>();
             CreateMap(typeof(QueryResult<>), typeof(QueryResultResource<>));
             CreateMap<Make, MakeResource>();
             CreateMap<Make, KeyValuePairResource>();

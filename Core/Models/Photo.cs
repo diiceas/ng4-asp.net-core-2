@@ -8,5 +8,6 @@ namespace ng4_asp.net_core_2.Core.Models
         [Required]
         [StringLength(255)]
         public string FileName { get; set; }
+        public int VehicleId { get; set; }
     }
 }

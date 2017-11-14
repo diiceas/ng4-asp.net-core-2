@@ -2,12 +2,14 @@ import * as Raven from 'raven-js'
 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, BrowserXhr } from '@angular/http';
 import { NgModule, NgZone, ErrorHandler } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ToastyModule } from 'ng2-toasty'
 
 import { VehicleService } from './services/vehicle.service';
+import { PhotoService } from './services/photo.service';
+import { BrowserXhrWithProgress, ProgressService } from './services/progress.service';
 
 import { AppComponent } from './components/app/app';
 import { NavMenuComponent } from './components/navmenu/navmenu';
@@ -52,8 +54,11 @@ Raven.config("https://b62620db245c47daa9a7d4f3e4b56b91@sentry.io/225623").instal
         ])
     ],
     providers: [        
+        { provide: ErrorHandler, useClass: AppErrorHandler },
+        { provide: BrowserXhr, useClass: BrowserXhrWithProgress },
         VehicleService, 
-        { provide: ErrorHandler, useClass: AppErrorHandler }
+        PhotoService,
+        ProgressService
     ]    
 })
 export class AppModuleShared {
